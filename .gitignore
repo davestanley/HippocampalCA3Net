@@ -13,4 +13,4 @@ core.*
 
 # Genesis data files
 *.dat
-
+sag_params*.g

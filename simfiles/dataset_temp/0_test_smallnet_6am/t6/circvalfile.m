@@ -1,0 +1,15 @@
+%Circadian values log
+SCN_val(1) = 0.9999999913;
+mel_val(1) = 0.9999999956;
+EC_val(1) = 0.9999999891;
+ACh_val(1) = 0.9999999563;
+ACh_level(1) = 0.4999999781;
+ACh_accom_scale(1) = 1;
+ACh_Esyn_scale(1) = 1;
+ACh_Isyn_scale(1) = 1;
+ACh_pyr_inj(1) = 0;
+ACh_bc_inj(1) = 0;
+ACh_olm_inj(1) = 0;
+Ca_val(1) = 1;
+percent_msg_intact(1) = 1;
+percent_ACh_intact(1) = 1;

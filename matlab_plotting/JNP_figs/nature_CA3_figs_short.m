@@ -5,8 +5,8 @@
 % % % % % % % % % % % % % % % % % Preliminary figures for nature paper % % % % % % %
 % clear; load wrkspc.mat
 
-addpath(genpath('./matlab_libdave1'))
-addpath('./funcs_supporting');
+addpath(genpath(fullfile('..','matlab_libdave1')))
+addpath(fullfile('.','funcs_supporting'));
 
 reload = 0; % % % % Reload .mat files
 plot_phases = 0;
@@ -37,10 +37,10 @@ fig9=1;
 
 fig_default=0;
 fig0=0; % Raw traces. (Uses sim0; path_raw)
-fig1=0; % Used in J Neurophys paper for modeling figure. (Uses sim1; path_cutfimbria)
+% fig1=0; % Used in J Neurophys paper for modeling figure. (Uses sim1; path_cutfimbria)
 fig2=0; % Used for J Neurophys paper - Singles. (sim2; path_singles)
 fig2b=0; % Singles merged; basket cells only I presume. Not used in J NEurophys, but maybe used in Conference paper?
-% fig3=0; % (Uses sim3 and sim4. Mainly sim4. Sim3 is sensitivity analysis, methinks. Sim4 corresponds to path_senschop.)
+fig3=0; % (Uses sim3 and sim4. Mainly sim4. Sim3 is sensitivity analysis, methinks. Sim4 corresponds to path_senschop.)
 fig4_suppl=0;
 fig9=0;
 
@@ -754,19 +754,18 @@ if fig3
 %     bC_err1 = reshape(C_err,1,length(C_err(:)));    
     
     
-    
     % % % % Sim4 - Vary strength of fimbria input
     sim = sim4;
-    loop1ROI=[6]; loop1range = [1:6];     % Range of interest for outer loop; Total number of iterations of outer loop
-    loop2ROI=[2:5]; loop2range = 1:11;   % Range of interest for inner loop; Total number of iterations of inner loop
+    loop1ROI=[6]; loop1range = [1:7];     % Range of interest for outer loop; Total number of iterations of outer loop
+    loop2ROI=[2:5]; loop2range = 1:7;   % Range of interest for inner loop; Total number of iterations of inner loop
     experiment_ROI = [0]; experiment_range = 0:0; % Experiment number of interest within loops; Total number of experiments within nested loops
     if plot_2D_sens
-        loop1ROI = loop1range([1:6]); loop2ROI = loop2range([1:11]);   % If doing sensitivity analysis, need to use whole grid.
+        loop1ROI = loop1range([1:7]); loop2ROI = loop2range([1:7]);   % If doing sensitivity analysis, need to use whole grid.
             % Note, for this simulation, sim{36:38} have bad values (sim
             % terminated on error)
     end
-    loop1vals = [-0.04 -0.08 -0.12 -0.16 -0.20 -0.24];  % We absolute value these later ...just incase
-    loop2vals = [0 5 10 15 20 25 30 35 40 45 50];       % We absolute value these later ...just incase
+    loop1vals = [-0.05 -0.075 -0.085 -0.10 -0.12 -0.14 -0.18];  % We absolute value these later ...just incase
+    loop2vals = [0.0 0.15 0.3 0.45 0.65 0.80 1.0]*50;                   % We absolute value these later ...just incase
     multi_plot;
     C_phi_interp2 = C_phi_interp;
     C_err_interp2 = C_err_interp;
@@ -783,7 +782,7 @@ if fig3
     annotation(figure1,'textbox',[0.03 0.92 0.05455 0.08571],'String',{'a'},'FitBoxToText','off','LineStyle','none','FontSize',FS_axislabels*2);
     annotation(figure1,'textbox',[0.47 0.92 0.05455 0.08571],'String',{'b'},'FitBoxToText','off','LineStyle','none','FontSize',FS_axislabels*2);
     
-%     h1 = subplot(121);
+    h1 = subplot(121);
 %     imagesc(x1,y1,C_phi_interp1,[0 12]); set(gca,'YDir','normal')
 %     %colorbar;
 %     h = findall(gca,'Type','image');

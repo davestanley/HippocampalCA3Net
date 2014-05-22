@@ -1,5 +1,5 @@
 //Bash generated parameter file
-int small_net = 0
+int small_net = 1
 int no_synapses = 0
 int plot_on = 1
 int include_NMDA = 0
@@ -30,9 +30,9 @@ float msg_inject0 = 2.1e-11
 float bc2pyr_GABA_A0 = 9.2e-9
 float pyr2pyr_AMPA0 = 2.6e-9
 float Gmax_pyr_bkgnd0 = 1.0e-9
-str dataoutput_path = "./dataset_temp04b_sept"
-str expname_path = "0_test_fullnet_6am"
-str circtime_path = "t0"
+str dataoutput_path = "./dataset_temp"
+str expname_path = "0_test_smallnet_6am"
+str circtime_path = "t6"
 float sim_time = 1.0
 int tindex = 1
 include main_script.g
