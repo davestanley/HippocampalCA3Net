@@ -670,7 +670,9 @@ fi
 
 
 
-if [ $2 = 3 ]; then		# Run under default settings
+if [ $2 = 3 ]; then		# Mode 3 - Healthy vs Injured (tests the effects of removing the septum)
+						# Used in Figure 7A-D of paper
+						# Note that I sweep through several parameters here. I end up only using EC_amp0 = 0.25
 
 	NOSAVE=0;
 	run_mode=4 ## Run full sim locally
@@ -730,7 +732,8 @@ fi
 
 
 
-if [ $2 = 4 ]; then		# Sensitivity analysis
+if [ $2 = 4 ]; then		# Mode 4 - Sensitivity analysis; vary melatonin and septal inputs
+						# Used in Figure 7E of paper
 
 	NOSAVE=0;
 	run_mode=6 ## Run full sim locally
@@ -769,4 +772,67 @@ if [ $2 = 4 ]; then		# Sensitivity analysis
 
 	
 fi
+
+
+
+
+if [ $2 = 5 ]; then		# Mode 5 - Singles; apply only 1 circadian input at a time.
+						# Used in Figure A3 (Appendix) of paper
+						# This code is taken from S05f_singles_huge
+
+	NOSAVE=0;
+	run_mode=4 ## Run full sim locally
+	sim_time=10.0
+	plot_on=0
+	small_net=0
+	include_NMDA=0
+	bc_gammanet=0
+	percent_msg_intact=1.0
+	percent_ACh_intact=1.0
+	no_synapses=0
+	setup_batch
+	
+	export numexps=0
+
+
+		# Setting up default circadian input magnitudes
+	EC_amp0=0.25; SCN_amp0=0.25; mel_amp0=0.10; Ca_amp0=0.20
+	ACh_accom_amp0=0.20; ACh_Esyn_amp0=0.20; ACh_pyr_amp0=0.20;
+	ACh_Isyn_amp0=${ACh_Esyn_amp0}; ACh_bc_amp0=${ACh_pyr_amp0}; ACh_olm_amp0=${ACh_pyr_amp0}
+
+	
+		# Running simulations
+		# Healthy
+		percent_msg_intact=1.0
+		EC_amp=${EC_amp0}; SCN_amp=0.0; mel_amp=0.0; Ca_amp=0.0; ACh_Esyn_amp=0.0; 
+		ACh_accom_amp=0.0; ACh_pyr_amp=0.0;
+		ACh_Isyn_amp=${ACh_Esyn_amp}; ACh_bc_amp=${ACh_pyr_amp}; ACh_olm_amp=${ACh_pyr_amp}
+		expname_raw=""$numexps"_"; expname_suffix="Pyrinj"; runexp 16
+		
+		EC_amp=0.0; SCN_amp=${SCN_amp0}; mel_amp=0.0; Ca_amp=0.0; ACh_Esyn_amp=0.0; 
+		ACh_accom_amp=0.0; ACh_pyr_amp=0.0;
+		ACh_Isyn_amp=${ACh_Esyn_amp}; ACh_bc_amp=${ACh_pyr_amp}; ACh_olm_amp=${ACh_pyr_amp}
+		expname_raw=""$numexps"_"; expname_suffix="SCN"; runexp 16
+		
+		EC_amp=0.0; SCN_amp=0.0; mel_amp=${mel_amp0}; Ca_amp=0.0; ACh_Esyn_amp=0.0; 
+		ACh_accom_amp=0.0; ACh_pyr_amp=0.0;
+		ACh_Isyn_amp=${ACh_Esyn_amp}; ACh_bc_amp=${ACh_pyr_amp}; ACh_olm_amp=${ACh_pyr_amp}
+		expname_raw=""$numexps"_"; expname_suffix="mel"; runexp 16
+		
+#		percent_msg_intact=0.0
+#		EC_amp=${EC_amp0}; SCN_amp=0.0; mel_amp=0.0; Ca_amp=0.0; ACh_Esyn_amp=0.0; 
+#		ACh_accom_amp=0.0; ACh_pyr_amp=0.0;
+#		ACh_Isyn_amp=${ACh_Esyn_amp}; ACh_bc_amp=${ACh_pyr_amp}; ACh_olm_amp=${ACh_pyr_amp}
+#		expname_raw=""$numexps"_"; expname_suffix="latent_Pyrinj"; runexp 16
+#		
+#		EC_amp=0.0; SCN_amp=0.0; mel_amp=${mel_amp0}; Ca_amp=0.0; ACh_Esyn_amp=0.0; 
+#		ACh_accom_amp=0.0; ACh_pyr_amp=0.0;
+#		ACh_Isyn_amp=${ACh_Esyn_amp}; ACh_bc_amp=${ACh_pyr_amp}; ACh_olm_amp=${ACh_pyr_amp}
+#		expname_raw=""$numexps"_"; expname_suffix="latent_mel"; runexp 16
+		
+		
+
+	
+fi
+
 
