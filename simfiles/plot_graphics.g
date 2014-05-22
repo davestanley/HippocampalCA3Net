@@ -17,7 +17,7 @@ function plot_graphics (plot_path, graph_name)
 
 float yoffset_val = 0.010
 yoffset_val = 0.000
-int max_num_plots = 50
+int max_num_plots = 10		// Number of traces per plot. Decrease this value for faster plotting.
 
 if (test_synapses)
 	yoffset_val = 0.0

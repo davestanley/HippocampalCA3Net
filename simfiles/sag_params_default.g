@@ -35,4 +35,4 @@ str expname_path = "0_test_fullnet_6am"
 str circtime_path = "t0"
 float sim_time = 1.0
 int tindex = 1
-include main_script.g
+//include main_script.g

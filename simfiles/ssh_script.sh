@@ -2,7 +2,8 @@
 currpath=`pwd`
 
 ## ****************************************** Overview ***************************************************
-
+# Please address feedback or comments to David Stanley, Boston University.
+# Email is my last name followed by my first initial at bu dot edu.
 
 ########### Quick start ###############
 #This is the bash script used for launching the Genesis code. It assumes Genesis executable is in your
