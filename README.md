@@ -7,15 +7,17 @@ Overview
 GENESIS Code for Hippocampal CA3 Circadian Model.
 
 This model produces the hippocampal CA3 neural network model used 
-in the paper below. In addition to generating the standard network,
-(shown below) it can also generate a network with varying degrees
-of GABAergic septal denervation. BASH scripts interact with GENESIS
-2.3 to conduct a large range of parameter sweeps.
+in the paper below. It has two modes of operation, a default mode and
+a circadian mode. In the circadian mode, parameters are swept through a
+range of values. 
 
-The model contains four cell types derived from prior papers.
-CA3 pyramidal are derived from Traub et al 1991; basket, 
-stratum oriens (O-LM), and medial Septal GABAergic
-(MSG) interneurons are taken from Hajos et al (2004).
+This model can be quite easily adapted to produce theta and gamma oscillations,
+as certain parameter sweeps will reveal (see Figures). BASH scripts interact
+with GENESIS 2.3 to implement parameter sweeps.
+
+The model contains four cell types derived from prior papers. CA3 pyramidal
+are derived from Traub et al (1991); Basket,  stratum oriens (O-LM), and
+Medial Septal GABAergic (MSG) interneurons are taken from Hajos et al (2004).
 
 Please address questions to David Stanley (Boston University).
 
