@@ -1,0 +1,8 @@
+
+function dout = cropdata (din, removal)
+
+len = length(din);
+
+dout = din(1:
+
+end
