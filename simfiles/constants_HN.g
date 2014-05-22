@@ -69,7 +69,7 @@ if (small_net)
 		msg_ny = 1
 	end
 else
-	int pyr_nx = 200 // number of pyramidal cells along x-axis
+	int pyr_nx = 100 // number of pyramidal cells along x-axis
 	int pyr_ny = 1 // number of pyramidal cells along y-axis
 	int olm_nx = 25 // number of feedback interneurons along x-axis
 	int olm_ny = 1 // number of feedback interneurons along y-axis
