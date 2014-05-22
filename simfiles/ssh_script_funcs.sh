@@ -121,12 +121,12 @@ function setup_batch()
 		cp ./ssh_script.sh ${dataoutput_path}
 	fi
 	
-	mkdir ${dataoutput_path}/simfiles
+	mkdir ${dataoutput_path}/snapshot
 	echo Copying simulation files
-	cp ./*.p ${dataoutput_path}/simfiles/
-	cp ./*.g ${dataoutput_path}/simfiles/
-	cp ./*.sh ${dataoutput_path}/simfiles/
-	cp ./*.m ${dataoutput_path}/simfiles/
+	cp ./*.p ${dataoutput_path}/snapshot/
+	cp ./*.g ${dataoutput_path}/snapshot/
+	cp ./*.sh ${dataoutput_path}/snapshot/
+	cp ./*.m ${dataoutput_path}/snapshot/
 	
 	echo '% List of pathnames' > ${dataoutput_path}/${MATLAB_FILELIST}file.m
 	echo '% List of variable names' > ${dataoutput_path}/${MATLAB_VARLIST}file.m
