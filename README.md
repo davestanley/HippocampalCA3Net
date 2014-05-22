@@ -4,7 +4,7 @@ JNPcircadian2013
 Overview
 --------
 
-GENESIS Code for Hippocampal CA3 Circadian Model.
+GENESIS 2.3 Code for Hippocampal CA3 Circadian Model.
 
 This model produces the hippocampal CA3 neural network model used 
 in the paper below. It has two modes of operation, a default mode and
