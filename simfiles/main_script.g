@@ -1,6 +1,6 @@
 
 
-// Various tweaks!
+// Various tweaks - for model tuning
 setrand -sprng			// The standard numerical recipies RNG doesn't work!
 int test_synapses = 0
 	int cell2test = 3 	//1=pyr; 2=bc; 3=olm; 4=msg
@@ -15,30 +15,30 @@ int enable_olm2bc_synapse = 0
 
 
 // Menne stuff
-include network41.g // network functions and randomizations
+include network41.g // network functions and randomizations (modified from Kerstin Menne's scripts)
 
 
 
-// Hajos stuff!
 
-// Make basket, olm, and msg cells from Hajos paper
+
+// Load constats, cell prototypes, and output functions
 include constants_HN.g
 include tweaks_constants.g				// Circadian functions. Needs to come after constants, before prototypes
-include prot_msgaba.g
+include prot_msgaba.g				// Make basket, olm, and msg cells from Hajos 2004 paper
 include prot_b.g
 include prot_olm.g
-include prot_traub91.g
+include prot_traub91.g				// Pyramidal cell from Traub 1991
 include tweaks_cells.g				// Circadian functions. Needs to come after prototypes
 include output_dav.g
 
+// Set up cell arrays
 include synapse_objects.g	// Create library of synaptic objects
 include create_arrays_HN.g	// Add synaptic channels, create cell arrays
 include randomize_HN.g
 include electrodes_HN.g
 
 
-
-// Add synapses!
+// Add synapses
 include connect_syn_functions.g	// Supporting functions
 include connect_synapses.g
 int n_msg_surviving = percent_msg_intact * n_of_msg
@@ -88,6 +88,7 @@ end
 reset
 reset
 
+////////////// This is not used. For testing only ///////////////////
 include PID_thresh.g
 int PID_time = 1.0
 if (test_synapses || test_bkgnd_syn)
@@ -118,7 +119,7 @@ if (test_synapses || test_bkgnd_syn)
 	
 end
 
-
+// This is used to generate some files containing code metadata, which are later read in by Matlab.
 echo %Circadian values log >> {gp}{pp}{sp}/circvalfile.m
 echo SCN_val({tindex}) = {SCN_val}";" >> {gp}{pp}{sp}/circvalfile.m
 echo mel_val({tindex}) = {mel_val}";" >> {gp}{pp}{sp}/circvalfile.m
