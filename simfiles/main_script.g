@@ -70,10 +70,10 @@ include write_everything_totals		// for plot_graphs commands.
 
 
 if (plot_on)
-//	plot_graphics "/pyr_arr/pyr[]" "/form4"
-//	plot_graphics "/bc_arr/bc[]" "/form5"
-//	plot_graphics "/olm_arr/olm[]" "/form6"
-	//plot_graphics "/msg_arr/msg[]" "/form7"
+	plot_graphics "/pyr_arr/pyr[]" "/form4"
+	plot_graphics "/bc_arr/bc[]" "/form5"
+	plot_graphics "/olm_arr/olm[]" "/form6"
+	plot_graphics "/msg_arr/msg[]" "/form7"
 
 	if (test_synapses || test_bkgnd_syn)
 //		plot_graphs "/pyr_arr/pyr/basal_4" "/graphs6" "deleteme6" 1 1

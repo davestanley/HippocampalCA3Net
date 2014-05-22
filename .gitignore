@@ -11,3 +11,6 @@ core.*
 # Mac files
 *.DS_Store
 
+# Genesis data files
+*.dat
+
