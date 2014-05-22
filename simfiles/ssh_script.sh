@@ -727,3 +727,46 @@ if [ $2 = 3 ]; then		# Run under default settings
 
 	
 fi
+
+
+
+if [ $2 = 4 ]; then		# Sensitivity analysis
+
+	NOSAVE=0;
+	run_mode=6 ## Run full sim locally
+	sim_time=5.0
+	plot_on=0
+	small_net=0
+	include_NMDA=0
+	bc_gammanet=0
+	percent_msg_intact=1.0
+	percent_ACh_intact=1.0
+	no_synapses=0
+	setup_batch
+	
+	export numexps=0
+
+
+		# Setting up default circadian input magnitudes
+	EC_amp0=0.25; SCN_amp0=0.25; mel_amp0=0.10; Ca_amp0=0.20
+	ACh_accom_amp0=0.20; ACh_Esyn_amp0=0.20; ACh_pyr_amp0=0.20;
+	ACh_Isyn_amp0=${ACh_Esyn_amp0}; ACh_bc_amp0=${ACh_pyr_amp0}; ACh_olm_amp0=${ACh_pyr_amp0}
+
+	
+		# Running simulations
+	# Sens
+	for mel_amp0 in 0.05 0.075 0.085 0.10 0.12 0.14 0.18
+	do
+		for percent_msg_intact in 0.0 0.15 0.3 0.45 0.65 0.80 1.0
+		do
+		# Healthy
+		EC_amp=${EC_amp0}; SCN_amp=${SCN_amp0}; mel_amp=${mel_amp0}; Ca_amp=0.0; ACh_Esyn_amp=0.0; 
+		ACh_accom_amp=0.0; ACh_pyr_amp=0.0;
+		ACh_Isyn_amp=${ACh_Esyn_amp}; ACh_bc_amp=${ACh_pyr_amp}; ACh_olm_amp=${ACh_pyr_amp}
+		expname_raw=""$numexps"_"; expname_suffix="healthy_all3"; runexp 9
+		done
+	done
+
+	
+fi
+
