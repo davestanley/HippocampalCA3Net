@@ -2,9 +2,7 @@
  
 This folder contains code for generating quick plots of simulation output, and also for bulk extraction to Matlab .mat files.
 
-analyse_script.m - Analyses output data produced by Genesis, and produces some basic plots. I’ve modified this one to work with the default simulations, reading from the “dataset_temp” folder.
-
-
+analyse_script.m - Analyses output data produced by Genesis, and produces some basic plots. By default, it will load some sample data included with this package (stored in simfiles/dataset_sample). You can modify it directly load new Genesis output by adjusting the path_ld variable. 
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
