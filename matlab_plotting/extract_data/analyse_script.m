@@ -31,11 +31,15 @@ if set_values
             plot_traces=1;
             plot_autocorr=0;
     celltype = 'psoma';
-
+    
+    
+    
+    % For loading data from working directory (useful if using Octave!)
 %     path_ld = pwd;
 %     path_ld = [path_ld '/t0'];
     
-    path_ld=fullfile('..','..','simfiles','dataset_temp','0_test_smallnet_6am','t6');
+    %path_ld=fullfile('..','..','simfiles','dataset_temp','0_test_smallnet_6am','t6');  
+    path_ld=fullfile('..','..','simfiles','dataset_sample','0_test_fullnet_6am','t6');
 
 end
 
