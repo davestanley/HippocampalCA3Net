@@ -6,22 +6,24 @@ Overview
 
 GENESIS 2.3 Code for Hippocampal CA3 Circadian Model.
 
-This model produces the hippocampal CA3 neural network model used 
-in the paper below. It has two modes of operation, a default mode and
-a circadian mode. In the circadian mode, parameters are swept through a
-range of values. 
+This model produces the hippocampal CA3 neural network
+model used in the paper below. It has two modes of operation, a
+default mode and a circadian mode. In the circadian mode, parameters
+are swept through a range of values.
 
-This model can be quite easily adapted to produce theta and gamma oscillations,
-as certain parameter sweeps will reveal (see Figures). BASH scripts interact
-with GENESIS 2.3 to implement parameter sweeps.
+This model can be quite easily adapted to produce theta and gamma
+oscillations, as certain parameter sweeps will reveal (see
+Figures). BASH scripts interact with GENESIS 2.3 to implement
+parameter sweeps.
 
-The model contains four cell types derived from prior papers. CA3 pyramidal
-are derived from Traub et al (1991); Basket,  stratum oriens (O-LM), and
-Medial Septal GABAergic (MSG) interneurons are taken from Hajos et al (2004).
-
-Please address questions to David Stanley (Boston University).
+The model contains four cell types derived from prior papers. CA3
+pyramidal are derived from Traub et al (1991); Basket, stratum oriens
+(O-LM), and Medial Septal GABAergic (MSG) interneurons are taken from
+Hajos et al (2004).
 
 **For screenshots, see screenshots folder or open README.html**
+
+**ModelDB link**: http://senselab.med.yale.edu/ModelDB/showmodel.asp?model=142104/
 
 **Original paper**:
 Stanley, DA, Talathi, SS, Parekh, MB, Cordiner, D, Zhou, J,
@@ -38,6 +40,7 @@ Traub RD, Wong RK, Miles R, and Michelson H. A model of a CA3 hippocampal
 pyramidal neuron incorporating voltage-clamp data on intrinsic conductances. J
 Neurophysiol 66: 635-650, 1991.
 
+Please address questions to David Stanley (Boston University).
 
 
 Running the default model:

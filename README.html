@@ -1,36 +1,39 @@
 <html><pre>
 
-<b>Overview:</b>This model produces the hippocampal CA3 neural network model used 
-in the paper below. It has two modes of operation, a default mode and
-a circadian mode. In the circadian mode, parameters are swept through a
-range of values. 
+<b>Overview:</b>This model produces the hippocampal CA3 neural network
+model used in the paper below. It has two modes of operation, a
+default mode and a circadian mode. In the circadian mode, parameters
+are swept through a range of values.
 
-This model can be quite easily adapted to produce theta and gamma oscillations,
-as certain parameter sweeps will reveal (see Figures). BASH scripts interact
-with GENESIS 2.3 to implement parameter sweeps.
+This model can be quite easily adapted to produce theta and gamma
+oscillations, as certain parameter sweeps will reveal (see
+Figures). BASH scripts interact with GENESIS 2.3 to implement
+parameter sweeps.
 
-The model contains four cell types derived from prior papers. CA3 pyramidal
-are derived from Traub et al (1991); Basket,  stratum oriens (O-LM), and
-Medial Septal GABAergic (MSG) interneurons are taken from Hajos et al (2004).
+The model contains four cell types derived from prior papers. CA3
+pyramidal are derived from Traub et al (1991); Basket, stratum oriens
+(O-LM), and Medial Septal GABAergic (MSG) interneurons are taken from
+Hajos et al (2004).
 
-<b>Original paper</b>: Stanley, DA, Talathi, SS, Parekh, MB, Cordiner, D, Zhou, J,
-Mareci, TH, Ditto, WL, Carney, PR. (2013). Phase shift in the 24-hour rhythm
-of hippocampal EEG spiking activity in a rat model of temporal lobe epilepsy.
-J Neurophysiol. 110(5):1070-86. doi: 10.1152/jn.00911.2012.
+GitHub link: <a href="https://github.com/davestanley/HippocampalCA3Net">https://github.com/davestanley/HippocampalCA3Net/</a>
+
+<b>Original paper</b>: Stanley, DA, Talathi, SS, Parekh, MB, Cordiner,
+D, Zhou, J, Mareci, TH, Ditto, WL, Carney, PR. (2013). Phase shift in
+the 24-hour rhythm of hippocampal EEG spiking activity in a rat model
+of temporal lobe epilepsy.  J Neurophysiol. 110(5):1070-86. doi:
+10.1152/jn.00911.2012.
 
 <b>References</b>:
-Hajos M, Hoffmann WE, Orban G, Kiss T, and Erdi P. Modulation of septo-
-hippocampal Theta activity by GABAA receptors: an experimental and
-computational approach. Neuroscience 126: 599-610, 2004.
-
-Traub RD, Wong RK, Miles R, and Michelson H. A model of a CA3 hippocampal
-pyramidal neuron incorporating voltage-clamp data on intrinsic conductances. J
-Neurophysiol 66: 635-650, 1991.
+Hajos M, Hoffmann WE, Orban G, Kiss T, and Erdi P. Modulation of
+septo- hippocampal Theta activity by GABAA receptors: an experimental
+and computational approach. Neuroscience 126: 599-610, 2004.
+Traub RD, Wong RK, Miles R, and Michelson H. A model of a CA3
+hippocampal pyramidal neuron incorporating voltage-clamp data on
+intrinsic conductances. J Neurophysiol 66: 635-650, 1991.
 
 Please address questions to David Stanley (Boston University).
 
-<b>For screenshots, see screenshots folder or open README.html</b>
-
+<hr>
 <b>Running the default model:</b>
 1) Unzip downloaded file (if necessary)
 2) Make sure that the genesis binary is in your current path
@@ -49,19 +52,19 @@ For additional help customizing the model and automatic processing of
 batch simulations, please contact the authors.
 
 
-<b>Sample model output:</b>
-<br><br>
 <img src="./matlab_plotting/extract_data/sample_raster.jpg" alt="Full model, all cells" style="width: 600px;">
-<b>Figure 1: Full Model, Raster Plot (analyse_script.m)</b>
+<b>Figure 1: Full Model, Raster Plot (analyse_script.m).</b>
 <br><br>
 <img src="./screenshots/mode_1_fin.png" alt="Full model, 50 cells" style="width: 550px;">
-<b>Figure 2: Sample Simulation Output (main_default.g)</b>
+<b>Figure 2: Sample Simulation Output (main_default.g).</b>
 <br><br>
 <img src="./screenshots/Network.png" alt="Full model, 50 cells" style="width: 400px;">
-<b>Figure 3: Network Structure</b>
+<b>Figure 3: Network Structure.</b>
 <br><br>
 <img src="./screenshots/Network2.png" alt="Full model, 50 cells" style="width: 400px;">
-<b>Figure 4: Network Connectivity</b>
+<b>Figure 4: Network Connectivity.</b> Expressed in terms of synaptic
+convergence (# presynaptic cells contacting each postynaptic cell).
+
 
 
 </pre></html>
