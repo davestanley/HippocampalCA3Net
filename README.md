@@ -1,4 +1,4 @@
-JNPcircadian2013
+HippocampalCA3Net
 ================
 
 Overview
@@ -23,7 +23,7 @@ Hajos et al (2004).
 
 **For screenshots, see screenshots folder or open README.html**
 
-**ModelDB link**: http://senselab.med.yale.edu/ModelDB/showmodel.asp?model=142104/
+**ModelDB link**: http://senselab.med.yale.edu/ModelDB/showmodel.asp?model=142104
 
 **Original paper**:
 Stanley, DA, Talathi, SS, Parekh, MB, Cordiner, D, Zhou, J,
